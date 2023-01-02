@@ -6,7 +6,7 @@
 // Function should return true if it is possible and false if not.
 
 //MY SOLUTION
-const camping = (dist, gal) => (dist/gal <= 25);
+const camping = (dist, mpg, gal) => (dist/gal <= mpg);
 
 //OTHER CLEVER SOLUTION
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => mpg * fuelLeft >= distanceToPump;
