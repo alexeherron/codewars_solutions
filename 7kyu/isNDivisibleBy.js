@@ -1,0 +1,21 @@
+//IS N DIVISIBLE BY (...)?
+// Create a function that checks if the first argument n is divisible by all other arguments (return true if no other arguments)
+
+// Example:
+
+// (6,1,3)--> true because 6 is divisible by 1 and 3
+// (12,2)--> true because 12 is divisible by 2
+// (100,5,4,10,25,20)--> true
+// (12,7)--> false because 12 is not divisible by 7
+
+//MY SOLUTION
+function nDivisible(){
+    let divisors = Object.values(arguments).slice(1);
+    let result = divisors.map(x => arguments[0] % x);
+    return result.reduce((acc, item) => acc + item, 0) == 0;
+}
+
+//OTHER CLEVER SOLUTION
+function isDivisible(firstN, ...otherN){
+    return otherN.every(n => firstN % n === 0);
+}
