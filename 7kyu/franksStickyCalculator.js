@@ -40,5 +40,27 @@
 // Although 127 / 7 = 18.1428 ; 18 is outputted instead.
 
 // MY SOLUTION
+function stickyCalc (op, v1, v2){
+    v1 = Math.round(v1);
+    v2 = Math.round(v2);
+    let n1 = Number(`${String(v1)}${String(v2)}`);
+    let result = (op == '+') ? (n1 + v2) :
+                  (op == '-') ? (n1 - v2) : 
+                  (op == '*') ? (n1 * v2) : 
+                  (n1 / v2);
+    return Math.round(result)
+}
 
 // OTHER CLEVER SOLUTION
+function stickyCalc (operation, val1, val2){
+    val1 = Math.round(val1)
+    val2 = Math.round(val2)
+    val3 = parseInt(val1.toString() + val2.toString());
+    switch (operation){
+      case "+": result = val3 + val2; break;
+      case "-": result = val3 - val2; break;
+      case "*": result = val3 * val2; break;
+      case "/": result = val3 / val2; break;
+    }
+    return Math.floor(result);
+}
